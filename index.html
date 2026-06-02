@@ -2,12 +2,31 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#080810" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Worth It?" />
+    <meta name="description" content="See any price as hours of your working life before you spend." />
+ 
+    <!-- Apple touch icon (used for home screen icon on iOS) -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+ 
+    <!-- PWA manifest -->
+    <link rel="manifest" href="/manifest.json" />
+ 
     <title>Worth It? — Time Cost Calculator</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
+        });
+      }
+    </script>
   </body>
 </html>
  
